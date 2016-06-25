@@ -2,11 +2,13 @@
 
 <h1 style="text-align: center;" id="posts-headline">Writings.</h1>
 <ol id="posts-list">
-  {{#foreach posts}}
+  {{#foreach posts limit="10"}}
   <li>
     <a href="{{url}}" title="Read more about '{{title}}'">{{title}}</a>
+    <p class="post description">{{excerpt characters="140"}}&hellip;</p>
     <time datetime="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time>
     <span class="post tags">{{tags separator=" "}}</span>
+    <hr class="divider post" />
   </li>
   {{/foreach}}
 </ol>
